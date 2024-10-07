@@ -10,6 +10,7 @@ class CustomUser(AbstractUser):
         related_name='customuser_groups',  # Уникальное имя для связи
         blank=True
     )
+
     user_permissions = models.ManyToManyField(
         'auth.Permission',
         related_name='customuser_permissions',  # Уникальное имя для связи
