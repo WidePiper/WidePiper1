@@ -1,9 +1,8 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-
 class CustomUser(AbstractUser):
-    # Уникальные поля пользователя, если они есть
+    telegram_id = models.CharField(max_length=20, blank=True, null=True, unique=True)  # Добавлено поле для Telegram ID
 
     groups = models.ManyToManyField(
         'auth.Group',
@@ -16,5 +15,4 @@ class CustomUser(AbstractUser):
         related_name='customuser_permissions',  # Уникальное имя для связи
         blank=True
     )
-
 

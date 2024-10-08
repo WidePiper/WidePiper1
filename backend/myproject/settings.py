@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'users',
+    'dex_transactions',
+    'django_celery_beat',
     'portfolio',
     'transactions',
     'betting',
